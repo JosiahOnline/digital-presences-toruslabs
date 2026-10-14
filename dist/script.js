@@ -8,14 +8,14 @@
   const sections = [...document.querySelectorAll('main > section')];
   const guideLinks = [...document.querySelectorAll('[data-guide]')];
   const header = document.querySelector('.site-header');
-  const team = document.getElementById('solution');
+  const presence = document.getElementById('presence');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let ticking = false;
   function updateGuide() {
-    // Activate each section as it enters the reading area, including the team.
+    // Activate each section as it enters the reading area.
     const readingLine = Math.max(header.offsetHeight + 90, innerHeight * .65);
     const inMotionStory = !reducedMotion.matches && !document.body.classList.contains('is-static-story');
-    document.body.classList.toggle('is-in-story', inMotionStory && team.getBoundingClientRect().top > readingLine);
+    document.body.classList.toggle('is-in-story', inMotionStory && presence.getBoundingClientRect().top > readingLine);
     let active = sections[0];
     for (const section of sections) {
       if (section.getBoundingClientRect().top <= readingLine) active = section;

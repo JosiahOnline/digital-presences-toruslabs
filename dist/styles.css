@@ -126,7 +126,7 @@
 /* Circular scores and arrow bars share one Before/After control. */
 .feature-group li>strong{font-weight:700}
 .proof-heading{margin-bottom:30px}.proof-heading .lead{font-size:15px;margin-top:22px;max-width:none}
-.proof-stage{--proof-before:var(--purple);--proof-after:#92278f;--proof-active:var(--proof-after);--proof-soft:#f4e2f3;padding:25px 32px 28px;border:1px solid var(--line);border-radius:12px;background:var(--purple-light)}
+.proof-stage{--proof-before:var(--purple);--proof-after:var(--success);--proof-active:var(--proof-after);--proof-soft:#dfebe3;padding:25px 32px 28px;border:1px solid var(--line);border-radius:12px;background:var(--purple-light)}
 .proof-stage[data-snapshot="before"]{--proof-active:var(--proof-before);--proof-soft:#e7ddeb}
 .proof-toolbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:22px;margin-bottom:23px;border-bottom:1px solid var(--line)}
 .proof-toolbar>p{font-size:13px;line-height:1.75;color:var(--muted)}.proof-toolbar strong{font-weight:600;color:var(--plum);font-size:16px}
