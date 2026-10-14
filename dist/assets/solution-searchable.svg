@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="400" viewBox="0 0 660 400" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">A business that is easier to find</title>
+  <desc id="desc">An illustrative local search result for Your business connected to a location pin on a neighbourhood map. No search position is implied.</desc>
+  <defs>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#371D40" flood-opacity=".09"/></filter>
+    <clipPath id="map"><rect x="365" y="32" width="260" height="335" rx="32"/></clipPath>
+  </defs>
+  <rect width="660" height="400" rx="24" fill="#F2EDF5"/>
+  <circle cx="45" cy="363" r="129" fill="#F1D777" opacity=".28"/>
+  <g clip-path="url(#map)">
+    <rect x="365" y="32" width="260" height="335" fill="#F2EDF5"/>
+    <path d="M361 74 626 216M377 369 581 21M385 20 472 370M363 272 635 290" stroke="#FFFFFF" stroke-width="25"/>
+    <path d="m589 23-74 344" stroke="#EC8862" stroke-opacity=".35" stroke-width="4"/>
+    <rect x="546" y="315" width="43" height="31" rx="9" transform="rotate(10 546 315)" fill="#DCD1E2"/>
+    <rect x="558" y="67" width="53" height="49" rx="12" transform="rotate(28 558 67)" fill="#DCD1E2"/>
+  </g>
+  <circle cx="505" cy="229" r="66" fill="#F1D777" opacity=".5"/>
+  <circle cx="505" cy="229" r="39" stroke="#654375" stroke-opacity=".16" stroke-width="2"/>
+  <ellipse cx="505" cy="244" rx="22" ry="7" fill="#371D40" opacity=".12"/>
+  <path d="M505 143c-29 0-52 23-52 51 0 37 52 62 52 62s52-25 52-62c0-28-23-51-52-51Z" fill="#654375"/>
+  <circle cx="505" cy="193" r="18" fill="#FFFFFF"/>
+  <g filter="url(#shadow)">
+    <rect x="34" y="70" width="380" height="245" rx="22" fill="#FFFFFF"/>
+    <rect x="56" y="94" width="334" height="53" rx="26.5" fill="#F2EDF5"/>
+    <circle cx="81" cy="119" r="8" stroke="#654375" stroke-width="2.8"/>
+    <path d="m87 125 6 6" stroke="#654375" stroke-width="2.8" stroke-linecap="round"/>
+    <text x="107" y="127" fill="#371D40" font-family="Arial,sans-serif" font-size="23">Services near me</text>
+    <rect x="60" y="173" width="50" height="50" rx="13" fill="#F1D777"/>
+    <path d="M73 189h24v22H73zM70 189l5-9h20l5 9" stroke="#371D40" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M82 211v-12h8v12" stroke="#371D40" stroke-width="2.5"/>
+    <text x="126" y="193" fill="#371D40" font-family="Arial,sans-serif" font-size="29" font-weight="700">Your business</text>
+    <text x="126" y="222" fill="#654375" font-family="Arial,sans-serif" font-size="21">Services · Location · Hours</text>
+    <path d="M61 248h325" stroke="#DCD1E2"/>
+    <text x="62" y="285" fill="#654375" font-family="Arial,sans-serif" font-size="23" font-weight="700">Website</text>
+    <path d="M158 275h17m-7-7 7 7-7 7" stroke="#654375" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M417 271c29 0 40-17 60-27" stroke="#654375" stroke-width="2" stroke-dasharray="4 6" stroke-linecap="round"/>
+  <circle cx="602" cy="45" r="6" fill="#EC8862"/>
+</svg>

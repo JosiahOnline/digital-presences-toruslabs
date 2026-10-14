@@ -1,0 +1,65 @@
+/* Restore the original offer palette without changing the rest of the page. */
+#pricing {
+  --cream: #faf5f1;
+  --berry: #8d2a5e;
+  --magenta: #92278f;
+  --muted: #705b70;
+  --line: #deced7;
+  background: #f1e5e8;
+}
+
+#pricing .pricing-card.single-plan {
+  background: var(--cream);
+  border-color: var(--magenta);
+}
+
+#pricing .single-plan-summary {
+  background: #f8edf3;
+}
+
+#pricing .billing-toggle {
+  border-color: #d6bdcd;
+  background: #faf5f180;
+}
+
+#pricing .billing-toggle button[aria-pressed="true"] {
+  background: var(--magenta);
+  color: #fff;
+}
+
+#pricing .single-plan-summary .pricing-subscribe {
+  background: var(--magenta);
+  color: #fff;
+}
+
+#pricing .single-plan-summary .pricing-subscribe:hover {
+  background: var(--berry);
+  color: #fff;
+}
+
+#pricing .single-plan-features {
+  border-color: #dcc6d4;
+}
+
+#pricing .feature-group h5 {
+  border-color: #e6d8df;
+}
+
+#pricing .feature-tag {
+  border-color: #d2aac4;
+}
+
+#pricing .contact-action {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 20px;
+}
+
+#pricing .contact-action .button {
+  background: var(--magenta);
+  color: #fff;
+}
+
+#pricing .contact-action .button:hover {
+  background: var(--berry);
+}

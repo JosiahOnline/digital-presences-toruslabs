@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="400" viewBox="0 0 660 400" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Clear business information that AI can reference</title>
+  <desc id="desc">An illustrative AI answer cites Your business as a source. This is a conceptual example, not a real search result or a promised recommendation.</desc>
+  <defs><filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#371D40" flood-opacity=".09"/></filter></defs>
+  <rect width="660" height="400" rx="24" fill="#F2EDF5"/>
+  <circle cx="50" cy="58" r="112" fill="#F1D777" opacity=".45"/>
+  <path d="M49 330c125 50 279 3 389-99" stroke="#EC8862" stroke-opacity=".35" stroke-width="2" stroke-dasharray="5 8"/>
+  <g filter="url(#shadow)">
+    <rect x="45" y="40" width="570" height="255" rx="23" fill="#FFFFFF"/>
+    <circle cx="90" cy="88" r="22" fill="#F2EDF5"/>
+    <path d="m90 73 4 11 11 4-11 4-4 11-4-11-11-4 11-4Z" fill="#654375"/>
+    <text x="125" y="98" fill="#371D40" font-family="Arial,sans-serif" font-size="30" font-weight="700">An AI answer</text>
+    <rect x="468" y="72" width="120" height="30" rx="15" fill="#F2EDF5"/>
+    <text x="528" y="93" fill="#654375" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle" letter-spacing="1">EXAMPLE</text>
+    <rect x="78" y="133" width="464" height="10" rx="5" fill="#DCD1E2"/>
+    <rect x="78" y="156" width="415" height="10" rx="5" fill="#DCD1E2"/>
+    <rect x="78" y="179" width="457" height="10" rx="5" fill="#DCD1E2"/>
+    <rect x="78" y="213" width="227" height="45" rx="10" fill="#F1D777" opacity=".8"/>
+    <text x="94" y="244" fill="#371D40" font-family="Arial,sans-serif" font-size="25" font-weight="700">Your business</text>
+    <rect x="312" y="211" width="22" height="22" rx="6" fill="#654375"/>
+    <text x="323" y="228" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="middle">1</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="275" y="279" width="340" height="82" rx="15" fill="#371D40"/>
+    <circle cx="313" cy="320" r="19" fill="#654375"/>
+    <path d="m310 326-3 3a6 6 0 0 1-9-9l6-6a6 6 0 0 1 8 0m4 0 3-3a6 6 0 0 1 9 9l-6 6a6 6 0 0 1-8 0m-7-5 9-9" transform="translate(0 -1)" stroke="#EC8862" stroke-width="2" stroke-linecap="round"/>
+    <text x="347" y="312" fill="#DCD1E2" font-family="Arial,sans-serif" font-size="17" letter-spacing="1">SOURCE</text>
+    <text x="347" y="340" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="27" font-weight="700">Your website</text>
+  </g>
+  <path d="m115 339 4 10 10 4-10 4-4 10-4-10-10-4 10-4Z" fill="#EC8862"/>
+</svg>
