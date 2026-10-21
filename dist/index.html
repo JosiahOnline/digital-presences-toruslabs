@@ -14,11 +14,13 @@
   <link rel="stylesheet" href="solution-team.css?v=10">
   <link rel="stylesheet" href="pricing-palette.css?v=2">
   <link rel="stylesheet" href="responsive-layout.css?v=1">
-  <script src="analytics.js?v=2" defer></script>
-  <script src="script.js?v=7" defer></script>
+  <link rel="stylesheet" href="free-audit.css?v=2">
+  <script src="analytics.js?v=4" defer></script>
+  <script src="script.js?v=8" defer></script>
+  <script src="free-audit.js?v=1" defer></script>
   <script src="story-frames.js?v=2" defer></script>
   <script src="owner-story.js?v=11" defer></script>
-  <script src="pricing.js?v=4" defer></script>
+  <script src="pricing.js?v=6" defer></script>
   <script src="brand-motion.js?v=5" defer></script>
   <script src="proof-comparison.js?v=5" defer></script>
 </head>
@@ -32,7 +34,8 @@
     <a href="#problem" data-guide="problem" aria-label="Hero scrollable story" aria-current="location"><span class="guide-dot" aria-hidden="true">01</span></a>
     <a href="#presence" data-guide="presence" aria-label="Searchable, Understandable and Recommendable"><span class="guide-dot" aria-hidden="true">02</span></a>
     <a href="#results" data-guide="results" aria-label="See progress, feel more confident"><span class="guide-dot" aria-hidden="true">03</span></a>
-    <a href="#pricing" data-guide="pricing" aria-label="Our offer"><span class="guide-dot" aria-hidden="true">04</span></a>
+    <a href="#audit" data-guide="audit" aria-label="Free Digital Audit"><span class="guide-dot" aria-hidden="true">04</span></a>
+    <a href="#pricing" data-guide="pricing" aria-label="Our offer"><span class="guide-dot" aria-hidden="true">05</span></a>
   </nav>
 
   <main id="main">
@@ -174,6 +177,34 @@
       </div>
     </section>
 
+    <section class="section free-audit" id="audit" data-tone="dark" aria-labelledby="audit-title">
+      <div class="section-inner">
+        <p class="eyebrow audit-section-label">Free Digital Audit</p>
+        <div class="audit-request-card">
+          <div class="audit-invitation">
+            <p class="audit-bridge">You’ve seen what changed. How does your website measure up?</p>
+            <h2 id="audit-title">Now see <em>yours.</em></h2>
+            <p class="audit-promise">Same report, your domain,<br>your real numbers.</p>
+            <p class="audit-explanation">Find out where your website stands in search and AI answers, and what to work on first.</p>
+            <p class="audit-free-note"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none"><path d="m5 10 3 3 7-7"/></svg>Free <span aria-hidden="true">·</span> No obligation</p>
+          </div>
+          <form class="audit-request-form" id="digital-audit-form" aria-label="Request your free digital presence audit" novalidate>
+            <label for="audit-website">Your website</label>
+            <div class="audit-input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5 5 13 0 18-5-5-5-13 0-18Z"/></svg><input id="audit-website" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com.my" required maxlength="253" aria-describedby="audit-website-help audit-form-status" data-clarity-mask="true" spellcheck="false" autocapitalize="none"></div>
+            <p class="audit-website-help" id="audit-website-help">We’ll open WhatsApp with your website filled in. Send the message to request your free audit.</p>
+            <button class="audit-submit" type="submit"><span>Get Your Digital Presence Audit</span><svg viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+            <p class="audit-form-status" id="audit-form-status" role="status" aria-live="polite"></p>
+            <p class="audit-no-website">This audit checks an existing website.<br>No website yet? <a class="new-website-enquiry" href="https://wa.me/60175693237?text=Hi%20Torus%2C%20I%20need%20a%20new%20website%20for%20my%20business.%20Could%20you%20tell%20me%20more%20about%20your%20packages%3F" target="_blank" rel="noopener noreferrer">Talk to us</a></p>
+          </form>
+        </div>
+        <div class="audit-report-includes" aria-label="What your audit covers">
+          <article><span class="audit-check-number" aria-hidden="true">01</span><h3>Your score. Eight checks.</h3><p>Schema, content, technical setup, trust, AI readiness, AEO, local SEO and Google Business.</p></article>
+          <article><span class="audit-check-number" aria-hidden="true">02</span><h3>Do AI answers mention you?</h3><p>See whether ChatGPT, Gemini and Perplexity name your business, and who appears instead.</p></article>
+          <article><span class="audit-check-number" aria-hidden="true">03</span><h3>Know what to fix first.</h3><p>Page-by-page findings and prioritised improvements, so you have a clear place to start.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section contact" id="pricing" data-tone="light" aria-labelledby="contact-title">
       <div class="section-inner">
         <div class="split contact-intro"><div class="section-copy"><p class="eyebrow">One conversation to get started</p><h2 id="contact-title">Let’s take one thing<br><em>off your mind.</em></h2><p class="lead">Send us your business name and website. We’ll talk through where you need support.</p></div><figure class="editorial-photo contact-photo"><img src="assets/contact.jpg" width="1200" height="900" loading="lazy" alt="Illustrative owner looking at her phone with a hopeful smile, ready to reach out"></figure></div>
@@ -189,7 +220,7 @@
                 <p class="pricing-amount"><span class="currency">RM</span><strong data-price>649</strong><span class="interval">/ month</span></p>
                 <p class="pricing-billing" data-billing>Billed monthly · 12-month contract</p>
                 <p class="pricing-commitment" data-commitment>No setup fee</p>
-                <a class="pricing-subscribe plan-enquiry" data-plan-link="t2" href="https://wa.me/60175693237?text=Hi%20Torus%2C%20I%E2%80%99m%20interested%20in%20Digital%20Presence%20Management%20at%20RM649/month%2C%20billed%20monthly%20with%20a%2012-month%20commitment.%20My%20business%20or%20website%20is%3A" target="_blank" rel="noopener noreferrer" aria-label="Enquire about Digital Presence Management on WhatsApp">Subscribe now</a>
+                <a class="pricing-subscribe plan-enquiry" data-plan-link="t2" href="https://wa.me/60175693237?text=Hi%20Torus%2C%20I%E2%80%99d%20like%20to%20subscribe%20to%20your%20Digital%20Presence%20Management%20package%20at%20RM649%2Fmonth%2C%20billed%20monthly%20with%20a%2012-month%20contract.%20Please%20help%20me%20get%20started." target="_blank" rel="noopener noreferrer" aria-label="Enquire about Digital Presence Management on WhatsApp">Subscribe now</a>
                 <p class="single-plan-whatsapp">Start a conversation on WhatsApp.</p>
               </div>
               <div class="pricing-features single-plan-features">
@@ -199,11 +230,11 @@
             </article>
           </div>
         </div>
-        <div class="contact-action"><a class="button whatsapp-link" href="https://wa.me/60175693237" target="_blank" rel="noopener noreferrer">Talk to Torus on WhatsApp <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.91 11.91 0 0 0 12.03 0C5.42 0 .05 5.37.05 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.62a11.98 11.98 0 0 0 5.86 1.49h.01C18.64 23.87 24 18.5 24 11.9c0-3.2-1.24-6.21-3.48-8.42ZM12.04 21.85a9.91 9.91 0 0 1-5.05-1.38l-.36-.21-3.66.96.98-3.57-.24-.37a9.9 9.9 0 0 1-1.53-5.3c0-5.49 4.46-9.95 9.95-9.95a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.04c0 5.49-4.46 9.86-10.04 9.86Zm5.46-7.45c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.59-.49-.51-.67-.52h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></a></div>
+        <div class="contact-action"><a class="button whatsapp-link" href="https://wa.me/60175693237?text=Hi%20Torus%2C%20I%E2%80%99d%20like%20help%20with%20my%20website%20and%20digital%20presence.%20I%20want%20to%20know%20more." target="_blank" rel="noopener noreferrer">Talk to Torus on WhatsApp <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.91 11.91 0 0 0 12.03 0C5.42 0 .05 5.37.05 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.62a11.98 11.98 0 0 0 5.86 1.49h.01C18.64 23.87 24 18.5 24 11.9c0-3.2-1.24-6.21-3.48-8.42ZM12.04 21.85a9.91 9.91 0 0 1-5.05-1.38l-.36-.21-3.66.96.98-3.57-.24-.37a9.9 9.9 0 0 1-1.53-5.3c0-5.49 4.46-9.95 9.95-9.95a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.04c0 5.49-4.46 9.86-10.04 9.86Zm5.46-7.45c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.59-.49-.51-.67-.52h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></a></div>
       </div>
     </section>
   </main>
   <footer class="site-footer"><span>© 2026 Torus Virtual · Searchable.Understandable.Recommendable</span><a href="#problem">Back to top ↑</a></footer>
-  <div class="mobile-enquiry"><a class="button button-small whatsapp-link" href="https://wa.me/60175693237" target="_blank" rel="noopener noreferrer">Talk to Torus <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.91 11.91 0 0 0 12.03 0C5.42 0 .05 5.37.05 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.62a11.98 11.98 0 0 0 5.86 1.49h.01C18.64 23.87 24 18.5 24 11.9c0-3.2-1.24-6.21-3.48-8.42ZM12.04 21.85a9.91 9.91 0 0 1-5.05-1.38l-.36-.21-3.66.96.98-3.57-.24-.37a9.9 9.9 0 0 1-1.53-5.3c0-5.49 4.46-9.95 9.95-9.95a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.04c0 5.49-4.46 9.86-10.04 9.86Zm5.46-7.45c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.59-.49-.51-.67-.52h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></a></div>
+  <div class="mobile-enquiry"><a class="button button-small whatsapp-link" href="https://wa.me/60175693237?text=Hi%20Torus%2C%20I%E2%80%99d%20like%20help%20with%20my%20website%20and%20digital%20presence.%20I%20want%20to%20know%20more." target="_blank" rel="noopener noreferrer">Talk to Torus <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.52 3.48A11.91 11.91 0 0 0 12.03 0C5.42 0 .05 5.37.05 11.98c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.62a11.98 11.98 0 0 0 5.86 1.49h.01C18.64 23.87 24 18.5 24 11.9c0-3.2-1.24-6.21-3.48-8.42ZM12.04 21.85a9.91 9.91 0 0 1-5.05-1.38l-.36-.21-3.66.96.98-3.57-.24-.37a9.9 9.9 0 0 1-1.53-5.3c0-5.49 4.46-9.95 9.95-9.95a9.9 9.9 0 0 1 7.04 2.92 9.9 9.9 0 0 1 2.91 7.04c0 5.49-4.46 9.86-10.04 9.86Zm5.46-7.45c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.39-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.59-.49-.51-.67-.52h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg></a></div>
 </body>
 </html>

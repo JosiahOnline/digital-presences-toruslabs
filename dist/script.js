@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const message = 'Hi Torus, I’d like help with my website and digital presence. My business or website is:';
+  const message = 'Hi Torus, I’d like help with my website and digital presence. I want to know more.';
   document.querySelectorAll('.whatsapp-link').forEach(link => {
     link.href = `https://wa.me/60175693237?text=${encodeURIComponent(message)}`;
   });

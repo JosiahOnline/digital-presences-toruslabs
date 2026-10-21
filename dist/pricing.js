@@ -20,8 +20,10 @@
       card.querySelector('[data-commitment]').textContent = terms;
       const link = card.querySelector('[data-plan-link]');
       if (link) {
-        const selection = annual ? '12-month commitment, billed monthly' : 'Monthly option';
-        const message = `Hi Torus, I’m interested in ${plan.name}. ${selection}, RM${price}/month. ${billing}. ${terms}. My business or website is:`;
+        const subscription = annual
+          ? `RM${price}/month, billed monthly with a 12-month contract`
+          : `RM${price}/month, billed monthly (cancel anytime)`;
+        const message = `Hi Torus, I’d like to subscribe to your ${plan.name} package at ${subscription}. Please help me get started.`;
         link.href = `https://wa.me/60175693237?text=${encodeURIComponent(message)}`;
       }
     });

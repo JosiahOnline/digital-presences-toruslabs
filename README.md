@@ -28,6 +28,7 @@ Open `http://localhost:8765`.
 - `dist/styles.css`, `dist/solution-team.css`, `dist/owner-story.css`: site styles.
 - `dist/responsive-layout.css`: equal mobile and tablet page gutters.
 - `dist/pricing-palette.css`: offer colours and WhatsApp button spacing.
+- `dist/free-audit.css`, `dist/free-audit.js`: Free Digital Audit section and validated WhatsApp handoff.
 - `dist/proof-comparison.js`: audit Before/After values and interactions.
 - `dist/owner-story.js`: scroll position, scene copy and desktop video loading.
 - `dist/story-frames.js`: mobile/iPhone scroll animation.
@@ -54,9 +55,9 @@ Tracking is configured in `dist/analytics.js` and loaded once by `dist/index.htm
 
 | GA4 event | Meaning / event parameters |
 | --- | --- |
-| `section_view` | A section has been meaningfully visible for at least one second. `section_id`: `problem` (hero), `presence` (services), `results`, `pricing`. Once per section per page load. |
+| `section_view` | A section has been meaningfully visible for at least one second. `section_id`: `problem` (hero), `presence` (services), `results`, `audit` (Free Digital Audit), `pricing`. Once per section per page load. |
 | `hero_stage_view` | A drawn animation stage has been visible for at least half a second. `stage_name`: `customer_search`, `business_missing`, `owner_workload`, `seo_aeo_geo`, `take_care_of_this`. Rapid jumps do not backfill skipped stages. |
-| `whatsapp_click` | WhatsApp intent, not a confirmed sent message or sale. `button_name`: `pricing_subscribe`, `contact`, `mobile_sticky`. `billing_option`: selected annual/monthly mode for the plan CTA, otherwise `not_selected`. |
+| `whatsapp_click` | WhatsApp intent, not a confirmed sent message or sale. `button_name`: `pricing_subscribe`, `contact`, `mobile_sticky`, `free_digital_audit`, `new_website_enquiry`. `billing_option`: selected annual/monthly mode for the plan CTA, otherwise `not_selected`. |
 | `billing_option_click` | `billing_option`: annual or monthly. |
 | `audit_snapshot_click` | `snapshot`: before or after. |
 | `navigation_click` | `section_id`: destination; `button_name`: journey guide or back to top. |
@@ -75,7 +76,7 @@ Custom events use fixed UI labels; they do not include enquiry text, WhatsApp UR
 The browser Pixel is connected to dataset/Pixel ID `2555957918204878`. It uses the same production-host allowlist as GA4 and Clarity, loads asynchronously, and sends events only to this dataset:
 
 - `PageView`: once per page load.
-- `WhatsAppClick` (custom event): when the pricing Subscribe button, contact WhatsApp button or mobile sticky WhatsApp button is clicked. Parameters: `button_name`, `section_id`, `billing_option`. It does not send a completed `Lead` or `Purchase` event.
+- `WhatsAppClick` (custom event): when a pricing Subscribe, contact, mobile sticky, free audit request or new-website enquiry button is used. Parameters: `button_name`, `section_id`, `billing_option`. It does not send a completed `Lead` or `Purchase` event.
 
 No Conversions API, advanced matching identifiers or server access token are included. No event sends the WhatsApp URL, prefilled enquiry text, names or phone numbers. The site does not assert visitor consent on their behalf.
 
@@ -84,3 +85,16 @@ After the GitHub push and Vercel deployment, open Meta Events Manager > this dat
 ### Deployment and verification
 
 Commit and push the updated files to the GitHub branch connected to Vercel. Tracking on the custom domain starts only after that deployment. Check GA4 Realtime and the Clarity dashboard after a production visit. Browser consent, blockers and account settings can affect collection. Full reports may take longer to populate. Source/logic checks were run locally; live collection was not checked, as requested.
+
+## Free Digital Audit and WhatsApp messages
+
+The Free Digital Audit section is fourth (`#audit`), before pricing. Its heading has no number badge. The form validates an existing website and opens WhatsApp to `60175693237` with a Free Digital Audit request and the website origin. It does not run an automated audit or send a message automatically. The entered website is masked in Clarity and is not included in custom analytics parameters.
+
+Each action keeps its own message:
+
+- **Free audit:** “Hi Torus, I’d like to request a Free Digital Audit for my website: [website]”
+- **No website yet / Talk to us:** “Hi Torus, I need a new website for my business. Could you tell me more about your packages?”
+- **Subscribe now:** a subscription request for Digital Presence Management, including the selected RM649/month annual option (billed monthly, 12-month contract) or RM749/month monthly option (cancel anytime).
+- **General contact / mobile WhatsApp:** “Hi Torus, I’d like help with my website and digital presence. I want to know more.”
+
+The audit request is tracked only after validation. The new-website link is tracked separately from the other enquiry buttons. Tracking records click intent, not a completed enquiry or sale.

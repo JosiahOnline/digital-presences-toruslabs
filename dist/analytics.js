@@ -59,13 +59,24 @@
     try { window.clarity('event', clarityEvent); } catch { /* Same for Clarity. */ }
   }
 
+  // The audit form emits this only after website validation. The submitted
+  // website stays in the WhatsApp handoff and is never an analytics parameter.
+  document.addEventListener('torus:audit-whatsapp', () => {
+    const parameters = {button_name: 'free_digital_audit', section_id: 'audit', billing_option: 'not_selected'};
+    track('whatsapp_click', parameters, 'whatsapp_free_digital_audit');
+    try {
+      window.fbq('trackSingleCustom', metaPixelId, 'WhatsAppClick', parameters);
+    } catch { /* Keep the form working if Meta tracking is blocked. */ }
+  });
+
   document.addEventListener('click', event => {
     const control = event.target.closest?.('a, button');
     if (!control) return;
     const sectionId = control.closest('main > section')?.id || 'navigation';
-    if (control.matches('.whatsapp-link, .plan-enquiry')) {
+    if (control.matches('.whatsapp-link, .plan-enquiry, .new-website-enquiry')) {
       const placement = control.closest('.mobile-enquiry') ? 'mobile_sticky'
-        : control.matches('.plan-enquiry') ? 'pricing_subscribe' : 'contact';
+        : control.matches('.plan-enquiry') ? 'pricing_subscribe'
+        : control.matches('.new-website-enquiry') ? 'new_website_enquiry' : 'contact';
       const billing = control.closest('[data-pricing-service]')?.dataset.billingMode || 'not_selected';
       track('whatsapp_click', {button_name: placement, section_id: sectionId, billing_option: billing}, 'whatsapp_' + placement);
       try {
