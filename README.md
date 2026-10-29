@@ -44,16 +44,16 @@ Future pushes to the connected production branch can trigger Vercel deployments.
 
 Tracking is configured in `dist/analytics.js` and loaded once by `dist/index.html`.
 
-- GA4 Measurement ID: `G-QG2PF4R7XE`.
+- Google Tag Manager container: `GTM-KVN7J89R`. It loads on the production-host allowlist below; use the container to configure TikTok tags.
+- Direct GA4 loading and event delivery are disabled. The previous GA4 Measurement ID (`G-QG2PF4R7XE`) is not configured in this code. If GA4 should remain off, do not add or leave an active GA4 tag in the GTM container.
 - Microsoft Clarity Project ID: `z0k8cdui58`.
 - Meta dataset/Pixel ID: `2555957918204878`.
-- Enabled on `digital-presence.toruslabs.my` and the existing `torus-virtual-human-partner.josiahsoh.chatgpt.site` publication. Use GA4's Hostname dimension to separate these sites. Localhost and Vercel preview URLs are excluded. Add a new production hostname to the allowlist if the domain changes.
-- GA4's standard tag collects page views, user/session metrics, sources, devices and engagement. Keep Enhanced measurement enabled in the web stream. Tag campaign links with UTM parameters for useful campaign attribution.
-- Google Signals and advertising personalisation signals are disabled by this installation. Meta Pixel is installed as described below.
+- GTM, Clarity and Meta Pixel are enabled on `digital-presence.toruslabs.my` and the existing `torus-virtual-human-partner.josiahsoh.chatgpt.site` publication. Localhost and Vercel preview URLs are excluded. Add a new production hostname to the allowlist if the domain changes.
+- The site pushes fixed-label custom events into GTM's `dataLayer` and Clarity. These events are available for GTM triggers, but are not sent directly to GA4.
 
 ### Custom events
 
-| GA4 event | Meaning / event parameters |
+| GTM `dataLayer` event | Meaning / event parameters |
 | --- | --- |
 | `section_view` | A section has been meaningfully visible for at least one second. `section_id`: `problem` (hero), `presence` (services), `results`, `audit` (Free Digital Audit), `pricing`. Once per section per page load. |
 | `hero_stage_view` | A drawn animation stage has been visible for at least half a second. `stage_name`: `customer_search`, `business_missing`, `owner_workload`, `seo_aeo_geo`, `take_care_of_this`. Rapid jumps do not backfill skipped stages. |
@@ -62,18 +62,16 @@ Tracking is configured in `dist/analytics.js` and loaded once by `dist/index.htm
 | `audit_snapshot_click` | `snapshot`: before or after. |
 | `navigation_click` | `section_id`: destination; `button_name`: journey guide or back to top. |
 | `story_fallback_click` | Visitor selects the static story after an animation load error. |
-| `scroll_depth` | Whole-page scroll milestones at 25, 50, 75, 90 and 100 percent. `scroll_percent`: milestone reached. Separate from GA4's built-in 90-percent `scroll` event. |
-
-For parameter breakdowns in GA4 reports, create event-scoped custom dimensions under Admin > Data display > Custom definitions for `section_id`, `stage_name`, `button_name`, `billing_option`, `snapshot` and `scroll_percent`. Event counts work without these definitions; the breakdowns need them. This installation does not change account settings or mark WhatsApp clicks as completed leads.
+| `scroll_depth` | Whole-page scroll milestones at 25, 50, 75, 90 and 100 percent. `scroll_percent`: milestone reached. |
 
 Clarity receives corresponding API events such as `view_pricing`, `hero_seo_aeo_geo`, `whatsapp_pricing_subscribe`, `billing_monthly`, `audit_before` and `scroll_75`. These help filter recordings. Clarity's heatmaps and recordings collect automatically, but the inside of the canvas animation is not replayed; use the hero-stage events for its progression.
 
-Custom events use fixed UI labels; they do not include enquiry text, WhatsApp URLs, visitor names or phone numbers. Clarity's default content masking remains enabled. The installation does not override consent settings or send a synthetic consent grant. If adding a consent manager, connect the actual visitor choices to GA4 consent mode and Clarity's consentv2 API.
+Custom events use fixed UI labels; they do not include enquiry text, WhatsApp URLs, visitor names or phone numbers. Clarity's default content masking remains enabled. The installation does not override consent settings or send a synthetic consent grant. If adding a consent manager, connect the actual visitor choices to Clarity's consentv2 API and any tags configured in GTM.
 
 
 ### Meta Pixel
 
-The browser Pixel is connected to dataset/Pixel ID `2555957918204878`. It uses the same production-host allowlist as GA4 and Clarity, loads asynchronously, and sends events only to this dataset:
+The browser Pixel is connected to dataset/Pixel ID `2555957918204878`. It uses the same production-host allowlist as GTM and Clarity, loads asynchronously, and sends events only to this dataset:
 
 - `PageView`: once per page load.
 - `WhatsAppClick` (custom event): when a pricing Subscribe, contact, mobile sticky, free audit request or new-website enquiry button is used. Parameters: `button_name`, `section_id`, `billing_option`. It does not send a completed `Lead` or `Purchase` event.
@@ -84,7 +82,7 @@ After the GitHub push and Vercel deployment, open Meta Events Manager > this dat
 
 ### Deployment and verification
 
-Commit and push the updated files to the GitHub branch connected to Vercel. Tracking on the custom domain starts only after that deployment. Check GA4 Realtime and the Clarity dashboard after a production visit. Browser consent, blockers and account settings can affect collection. Full reports may take longer to populate. Source/logic checks were run locally; live collection was not checked, as requested.
+Commit and push the updated files to the GitHub branch connected to Vercel. GTM and tracking on the custom domain start only after that deployment. Use GTM Preview/Tag Assistant to verify the container and configured TikTok tags, and check Clarity and Meta Events Manager after a production visit. Browser consent, blockers and account settings can affect collection. Live collection was not checked.
 
 ## Free Digital Audit and WhatsApp messages
 

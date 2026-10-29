@@ -8,7 +8,7 @@
   ]);
   if (!productionHosts.has(location.hostname) || window.torusAnalyticsLoaded) return;
   window.torusAnalyticsLoaded = true;
-  const measurementId = 'G-QG2PF4R7XE';
+  const tagManagerId = 'GTM-KVN7J89R';
   const clarityId = 'z0k8cdui58';
   const metaPixelId = '2555957918204878';
 
@@ -21,13 +21,8 @@
     document.head.appendChild(script);
   }
   window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId, {
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false
-  });
-  loadScript('torus-google-tag', 'https://www.googletagmanager.com/gtag/js?id=' + measurementId);
+  window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+  loadScript('torus-google-tag-manager', 'https://www.googletagmanager.com/gtm.js?id=' + tagManagerId);
   window.clarity = window.clarity || function () {
     (window.clarity.q = window.clarity.q || []).push(arguments);
   };
@@ -53,9 +48,7 @@
   // Only fixed UI labels go into our custom events. Do not send enquiry text,
   // phone numbers, names, or the WhatsApp URL/query string as event parameters.
   function track(name, parameters, clarityEvent = name) {
-    try {
-      window.gtag('event', name, {send_to: measurementId, transport_type: 'beacon', ...parameters});
-    } catch { /* Tracking must never interrupt the landing page. */ }
+    try { window.dataLayer.push({event: name, ...parameters}); } catch { /* Tracking must never interrupt the landing page. */ }
     try { window.clarity('event', clarityEvent); } catch { /* Same for Clarity. */ }
   }
 
